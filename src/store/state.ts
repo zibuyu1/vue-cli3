@@ -1,12 +1,9 @@
-import Local from '../utils/localStorageApi';
-const local = new Local();
+// 定义数据接口类型
 interface State {
-  isLogin: boolean|any;
-  listArr: object;
+  listTest: any[];
 }
-
+// 初始化
 const state: State  = {
-  isLogin: local.setItem('isLogin', false),
-  listArr: [],
+  listTest: [],
 };
 export default state;

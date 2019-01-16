@@ -1,27 +1,29 @@
 <template>
   <div class="layout">
-    <headers></headers>
+    <SubmenuComp></SubmenuComp>
     <mains></mains>
-    <footers></footers>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Watch } from 'vue-property-decorator';
-import Headers from '../components/common/header.vue';
-import Footers from '../components/common/footer.vue';
+import SubmenuComp from '../components/common/submenu.vue';
 import Mains from '../components/common/mains.vue';
 @Component({
   components: {
-    Headers,
-    Footers,
     Mains,
+    SubmenuComp,
   },
 })
-export default class Layout extends Vue {}
+export default class Layout extends Vue {
+  @Watch('$route', { deep: true })
+  private onroute(cur: any, old: any) {
+    this.routerChange();
+  }
+  private routerChange() {
+    if (this.$route.path === '/filters') {
+      this.$message.success('监听路由成功');
+    }
+  }
+}
 </script>
-<style>
-</style>
-
-
-

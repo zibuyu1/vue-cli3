@@ -10,7 +10,8 @@ declare module 'vue/types/vue' {
   interface Vue {
     $message: any,
     $router: VueRouter,
-    $route: Route
+    $route: Route,
+    consoleStr(): any,
   }
 }
 

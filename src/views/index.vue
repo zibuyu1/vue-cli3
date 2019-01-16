@@ -1,23 +1,29 @@
 <template>
-  <div class="hz_index">
-    <hello></hello>
-    <hz-upload uploadType="uploadType1" :accept="accept">
-      <el-button type="primary">主要按钮</el-button>
-    </hz-upload>
+  <div class="index">
+    <el-button type="primary" 
+    @click.native="dialogVisible = true">
+      我是父组件
+    </el-button>
+    <DialogMask
+    :dialogVisible="dialogVisible"
+    @closeDialog="closeDialog">
+    </DialogMask>
   </div>
 </template>
 
 <script lang='ts'>
-import { Component, Vue } from 'vue-property-decorator';
-import HzUpload from '../components/common/upload.vue';
-import Hello from '../components/HelloWorld.vue';
+import { Component, Vue, Emit } from 'vue-property-decorator';
+import DialogMask from '../components/index/mask.vue';
 @Component({
   components: {
-    HzUpload,
-    Hello,
+    DialogMask,
   },
 })
-export default class Upload extends Vue {
-  private accept: string = '.SLDPRT,.PRT,.STEP,.stp,.IGS,.IGES';
+export default class IndexComp extends Vue {
+  private dialogVisible: boolean = false;
+  @Emit()
+  private closeDialog(flag: boolean) {
+    this.dialogVisible = flag;
+  }
 }
 </script>

@@ -22,12 +22,36 @@ const router = new Router({
           component: () => import('views/index.vue'),
         },
         {
-          path: '/about',
-          name: 'about',
+          path: '/filters',
+          name: 'filters',
           meta: {
             auth: true, // 是否需要登录校验
           },
-          component: () => import('views/about.vue'),
+          component: () => import('views/filters.vue'),
+        },
+        {
+          path: '/mixins',
+          name: 'mixins',
+          meta: {
+            auth: true, // 是否需要登录校验
+          },
+          component: () => import('views/mixins.vue'),
+        },
+        {
+          path: '/computed',
+          name: 'computed',
+          meta: {
+            auth: true, // 是否需要登录校验
+          },
+          component: () => import('views/computed.vue'),
+        },
+        {
+          path: '/vuex',
+          name: 'vuex',
+          meta: {
+            auth: true, // 是否需要登录校验
+          },
+          component: () => import('views/vuex.vue'),
         },
       ],
     },

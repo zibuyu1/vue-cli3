@@ -1,3 +1,3 @@
 export default {
-  SET_IS_LOGIN: 'SET_IS_LOGIN', // 是否登录
+  SET_LIST_TEST: 'SET_LIST_TEST',
 };

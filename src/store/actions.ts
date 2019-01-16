@@ -2,9 +2,10 @@ import { ActionTree } from 'vuex';
 import TYPES from './types';
 
 const actions: ActionTree<any, any> = {
-  setIsLogin({ commit }, login) {
-    commit(TYPES.SET_IS_LOGIN, login);
-  },
+  // 异步调用
+  // setListTest({ commit }, arr) {
+  //   commit(TYPES.SET_LIST_TEST, arr);
+  // },
 };
 
 export default actions;
